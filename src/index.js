@@ -7,6 +7,7 @@ const AWS = require("aws-sdk");
 const fs = require("fs");
 const Path = require("path");
 const request = require("request");
+const schedule = require('node-schedule');
 
 // Models
 const Media = require("../models/Media");
@@ -197,3 +198,19 @@ async function deleteLocalMedia(media) {
     media.isPosted = true;
     media.save();
 };
+
+// Timed and Sync
+// Get new posts on boot
+// fetchReddit()
+// Send new tweet on boot
+getMedia();
+
+
+// Send new tweet at 14:00JST
+schedule.scheduleJob('0 14 * * *', () => {
+    getMedia();
+});
+// Get new media at 00:00 JST
+schedule.scheduleJob('0 0 * * *', () => {
+    fetchReddit();
+});
