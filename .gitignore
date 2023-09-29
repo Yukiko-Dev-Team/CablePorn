@@ -1,0 +1,5 @@
+keys.txt
+.env
+node_modules/*
+media/*.png
+media/*.jpg
