@@ -203,7 +203,7 @@ async function deleteLocalMedia(media) {
 // Get new posts on boot
 fetchReddit()
 // Send new tweet on boot
-// getMedia();
+getMedia();
 
 
 // Send new tweet at 14:00JST
