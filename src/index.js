@@ -42,9 +42,6 @@ AWS.config.update({
 
 const s3 = new AWS.S3;
 
-// Function to introduce a delay
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
 // Function to fetch images from Reddit
 /**
  * Fetches images from the Reddit 'cableporn' subreddit.
